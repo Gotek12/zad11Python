@@ -1,0 +1,19 @@
+Radix sort (sortowanie pozycyjne) - szybkie sortowanie wydajne dla dużych liczb.
+
+Złożoność obliczeniowa : O(d(n+k)), gdzie k to liczba cyfr w liczbach dostarczonych danych (dla 1000 - 4 liczby itd.), 
+a d to podstawa systemu liczenia (zazwyczaj 10)
+
+Złożoność pamięciowa: wymaga O(n+k) dodatkowej pamięci
+
+Sposób działania:
+
+Na samym początku znajdujemy największą wartość, której osiagnięcie lub przekroczenie będzie oznaczało koniec sorotwania
+(gdy podstawa systemu d podniesiona do kolejnej potęgi będzie większa od wartości maksymalnej)
+
+Sortowanie polega na sortowaniu cyfr na odpowiednich pozycjach w liczbach - najpierw jedności, potem dziesiątki, setki itd.
+Listę wejściową dzielimy na d (10) "kubełków", do których wrzucamy liczby z odpowienią cyfrą na obecnie przeszukiwanej pozycji 
+(tak więc 1 i 101 trafią do kubełka z indeksem 1, a 1002 i 3042 do kubełka  z indeksem 2 przy przesukiwaniu po pozycji jendości)
+
+Następnie scalamy "kubełki" do początkowej tablicy zaczynając od najmniejszych indeksów. 
+
+Powtarzamy tak z następną pozycją ( d w następnej potędze)
